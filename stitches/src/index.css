@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-image: url('pink.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* --- SIDEBAR AND NAVIGATION STYLES (Penshoppe inspired, toggleable with buttons) --- */
+.sidebar {
+  width: 0; /* Hidden by default */
+  height: 100vh; /* Full height */
+  position: fixed; /* Fixed position on the left */
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255); /* White background */
+  border-right: 1px solid #e0e0e0;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 100;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  transition: width 0.3s ease; /* Smooth transition for opening/closing */
+}
+
+.sidebar.open {
+  width: 250px; /* Full width when opened */
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.sidebar-logo {
+  height: 80px;
+  width: auto;
+  margin-bottom: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 15px;
+  flex-grow: 1; /* Allow navigation to take up available space */
+}
+
+.sidebar-nav a {
+  font-size: 0.9em; /* Smaller font size for navigation */
+  font-weight: 500;
+  text-decoration: none;
+  color: #555;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  text-align: left;
+  padding: 10px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-nav a:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.sidebar-nav a.active {
+  background-color: #000000;
+  color: white;
+  font-weight: 600;
+}
+
+/* Button styles for opening and closing the sidebar */
+.toggle-btn,
+.close-btn {
+  background-color: #333;
+  color: white;
+  font-size: 1.5em;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 102; /* Ensure the button stays above content */
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 80px; /* Placing the button below the top marquee */
+  left: 10px;
+  display: block; /* Show toggle button initially */
+}
+
+.close-btn {
+  position: relative;
+  width: 80%; /* Make it slightly smaller than the full width */
+  padding: 0.5px 0; /* Increase height for a taller button */
+  background-color: #f44336; /* Red background for close button */
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  cursor: pointer;
+  display: none; /* Hide close button initially */
+  margin-top: auto; /* Push the button to the bottom of the sidebar */
+  border-radius: 4px; /* Optional: adds rounded corners for a cleaner look */
+  margin-bottom: 20px; /* Adds space between the close button and the bottom */
+}
+
+
+/* Visibility classes for collapsing content */
+.sidebar-logo.visible,
+.sidebar-title.visible,
+.sidebar-nav.visible {
+  opacity: 1; /* Make content visible when sidebar is open */
+}
+
+.sidebar-logo,
+.sidebar-title,
+.sidebar-nav {
+  opacity: 0; /* Hide content when sidebar is closed */
+  transition: opacity 0.3s ease;
+}
+
+/* --- MAIN CONTENT STYLES --- */
+.main-content {
+  margin-left: 0;
+  padding-top: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  padding: 50px 20px;
+  flex-grow: 1;
+}
+
+.content {
+  flex: 1;
+  text-align: left;
+  color: #000000;
+  max-width: 50%;
+}
+
+.content h3 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #000000d0;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #333;
+}
+
+/* --- SLIDESHOW --- */
+.gallery-container {
+  flex: 1;
+  max-width: 50%;
+  position: relative;
+  border-radius: 8px;
+}
+
+.slideshow-image {
+  display: none;
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slideshow-image.active {
+  display: block;
+  opacity: 1;
+}
+
+/* --- MARQUEE --- */
+.marquee-container {
+  width: 100%; /* Full width for the marquee */
+  margin-left: 0; /* Ensure it's not offset by the sidebar */
+  overflow: hidden;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.marquee-content {
+  white-space: nowrap;
+  animation: scroll-left 25s linear infinite;
+}
+
+.marquee-content span {
+  display: inline-block;
+  padding: 0 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.top-marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 99;
+}
+
+.bottom-marquee {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 101;
+}

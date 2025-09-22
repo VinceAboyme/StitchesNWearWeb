@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-image: url('pink.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- SIDEBAR AND NAVIGATION STYLES (Penshoppe inspired, toggleable with buttons) --- */
+.sidebar {
+  width: 0; /* Hidden by default */
+  height: 100vh; /* Full height */
+  position: fixed; /* Fixed position on the left */
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255); /* White background */
+  border-right: 1px solid #e0e0e0;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 100;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  transition: width 0.3s ease; /* Smooth transition for opening/closing */
+}
+
+.sidebar.open {
+  width: 250px; /* Full width when opened */
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.sidebar-logo {
+  height: 80px;
+  width: auto;
+  margin-bottom: 10px;
+  transition: visibility 0s ease, opacity 0s ease;
+  visibility: hidden; /* Initially hidden */
+}
+
+.sidebar-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  transition: visibility 0s ease, opacity 0s ease;
+  visibility: hidden; /* Initially hidden */
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 15px;
+  flex-grow: 1; /* Allow navigation to take up available space */
+  visibility: hidden; /* Initially hidden */
+}
+
+.sidebar-nav a {
+  font-size: 0.9em; /* Smaller font size for navigation */
+  font-weight: 500;
+  text-decoration: none;
+  color: #555;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  text-align: left;
+  padding: 10px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-nav a:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.sidebar-nav a.active {
+  background-color: #000000;
+  color: white;
+  font-weight: 600;
+}
+
+/* --- Button styles for opening and closing the sidebar --- */
+.toggle-btn,
+.close-btn {
+  background-color: #333;
+  color: white;
+  font-size: 1.5em;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 102; /* Ensure the button stays above content */
+}
+
+.toggle-btn {
+  position: fixed; /* Fixed position at the top left */
+  top: 20px; /* 20px from the top */
+  left: 20px; /* 20px from the left */
+  display: block; /* Show toggle button initially */
+}
+
+/* The close button has a red background */
+.close-btn {
+  position: relative;
+  width: 80%; /* Make it slightly smaller than the full width */
+  padding: 0px 0; /* Increase height for a taller button */
+  background-color: #f44336; /* Red background for close button */
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  cursor: pointer;
+  display: none; /* Hide close button initially */
+  margin-top: 0px; /* Push the button to the bottom of the sidebar */
+  border-radius: 4px; /* Optional: adds rounded corners for a cleaner look */
+  margin-bottom: 20px; /* Adds space between the close button and the bottom */
+}
+
+
+/* --- MAIN CONTENT STYLES --- */
+.main-content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 100px auto 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.intro-text {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.intro-text h2 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+.intro-text p {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+/* --- SERVICES --- */
+.services-container,
+.products-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.services-container h3,
+.products-container h3 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* --- SERVICES GRID --- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.service-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.service-item h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* --- PRODUCTS GRID --- */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+
+.product-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.product-item p {
+  font-size: 0.9rem;
+  color: #555;
+}

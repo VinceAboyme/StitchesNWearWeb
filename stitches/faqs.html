@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/faqs.css">
+    <title>Stitches N Wear - FAQs</title>
+</head>
+<body>
+    <!-- Sidebar (Include the same sidebar code as your other pages) -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="src/logosnw.jpg" alt="Stitches N Wear Logo" class="sidebar-logo">
+            <h1 class="sidebar-title">Stitches N Wear</h1>
+            <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+            <button class="close-btn" onclick="closeSidebar()">×</button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html">Home</a>
+            <a href="inquiry.html">Products & Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contacts & Links</a>
+            <a href="faqs.html" class="active">FAQs</a>
+        </nav>
+    </aside>
+
+    <!-- Main content for FAQs -->
+    <main class="main-content-wrapper">
+        <div class="faqs-container">
+            <h2>Frequently Asked Questions (FAQs)</h2>
+            <div class="faq">
+                <h3>1. What types of products do you offer?</h3>
+                <p>Stitches N Wear specializes in a wide variety of custom clothing and accessories, including:</p>
+                <ul>
+                    <li>Customized t-shirts</li>
+                    <li>Polo shirts</li>
+                    <li>Sports uniforms</li>
+                    <li>School uniforms</li>
+                    <li>Company uniforms</li>
+                    <li>Tote bags</li>
+                    <li>Caps</li>
+                    <li>Mugs</li>
+                    <li>Towels</li>
+                    <li>Umbrellas</li>
+                    <li>And much more!</li>
+                </ul>
+            </div>
+            <div class="faq">
+                <h3>2. How can I place a custom order?</h3>
+                <p>Placing a custom order with us is easy! You can check out our <a href="inquiry.html">Products & Services</a> page, or check out our contacts/emails via the <a href="contact.html">Contact Us</a> page.</p>
+            </div>
+            <div class="faq">
+                <h3>3. What customization options do you offer?</h3>
+                <p>We offer a variety of customization options, including:</p>
+                <ul>
+                    <li><strong>Embroidery:</strong> Logos, text, and intricate designs.</li>
+                    <li><strong>Sublimation Printing:</strong> Full-color, high-quality prints on polyester fabrics.</li>
+                    <li><strong>Silk Screening:</strong> Durable and vibrant designs for apparel.</li>
+                    <li><strong>Custom Sizing:</strong> Tailored products to your specifications.</li>
+                </ul>
+            </div>
+            <div class="faq">
+                <h3>4. How long does it take to receive my custom order?</h3>
+                <p>Typically, custom orders take 7-14 business days for production. However, it may vary depending on the size and complexity of your order. Contact us for a more accurate estimate.</p>
+            </div>
+            <div class="faq">
+                <h3>5. After giving the layout design prototype, can I get a sample of a product before ordering in bulk?</h3>
+                <p>Yes, we offer samples of most products. Please reach out to us to request a sample, and we’ll arrange it for you.</p>
+            </div>
+            <div class="faq">
+                <h3>6. What is your return policy?</h3>
+                <p>Due to the custom nature of our products, we do not accept returns or exchanges unless there is a defect with the product. Please contact us if there are any issues with your order.</p>
+            </div>
+            <div class="faq">
+                <h3>7. Do you offer bulk discounts for corporate or school orders?</h3>
+                <p>Yes, we offer bulk discounts for large orders. Contact us to discuss your needs and get a customized quote based on the quantity and type of products you're ordering.</p>
+            </div>
+            <div class="faq">
+                <h3>8. What payment methods do you accept?</h3>
+                <p>We accept payments via bank transfer, cash on delivery (COD), PayPal, and credit/debit cards.</p>
+            </div>
+            <div class="faq">
+                <h3>9. Can you deliver internationally?</h3>
+                <p>We currently offer local deliveries within Cebu, Philippines. Please contact us for more details.</p>
+            </div>
+            <div class="faq">
+                <h3>10. How can I contact you?</h3>
+                <p>You can reach us via:</p>
+                <ul>
+                    <li>Email: <a href="mailto:stitchesnwear@gmail.com">stitchesnwear@gmail.com</a></li>
+                    <li>Phone: +63 918 927-3536 / +63 922 890-3302</li>
+                    <li>Visit our company: Cebu Cube Ice Compound M Ceniza St Casuntingan, Mandaue City, Cebu, Philippines</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        // Include sidebar toggle functionality (same as other pages)
+        const images = document.querySelectorAll('.slideshow-image');
+        let currentImageIndex = 0;
+
+        function showNextImage() {
+            images[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000);
+
+        // Function to toggle sidebar visibility
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const openButton = document.querySelector('.toggle-btn');
+            const closeButton = document.querySelector('.close-btn');
+            const sidebarLogo = document.querySelector('.sidebar-logo');
+            const sidebarTitle = document.querySelector('.sidebar-title');
+            const sidebarNav = document.querySelector('.sidebar-nav');
+
+            sidebar.classList.add('open'); // Open sidebar
+            openButton.style.display = 'none'; // Hide the open button
+            closeButton.style.display = 'block'; // Show the close button
+            sidebarLogo.classList.add('visible'); // Make logo visible
+            sidebarTitle.classList.add('visible'); // Make title visible
+            sidebarNav.classList.add('visible'); // Make navigation links visible
+        }
+
+        // Function to close the sidebar
+        function closeSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const openButton = document.querySelector('.toggle-btn');
+            const closeButton = document.querySelector('.close-btn');
+            const sidebarLogo = document.querySelector('.sidebar-logo');
+            const sidebarTitle = document.querySelector('.sidebar-title');
+            const sidebarNav = document.querySelector('.sidebar-nav');
+
+            sidebar.classList.remove('open'); // Close sidebar
+            openButton.style.display = 'block'; // Show the open button
+            closeButton.style.display = 'none'; // Hide the close button
+            sidebarLogo.classList.remove('visible'); // Hide logo
+            sidebarTitle.classList.remove('visible'); // Hide title
+            sidebarNav.classList.remove('visible'); // Hide navigation links
+        }
+    </script>
+</body>
+</html>

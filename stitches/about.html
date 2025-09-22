@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Stitches N Wear</title>
+    <link rel="stylesheet" href="src/about.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="src/logosnw.jpg" alt="Stitches N Wear Logo" class="sidebar-logo">
+            <h1 class="sidebar-title">Stitches N Wear</h1>
+            <button class="toggle-btn" onclick="toggleSidebar()">☰</button> <!-- Open button -->
+            <button class="close-btn" onclick="closeSidebar()">×</button> <!-- Close button -->
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html">Home</a>
+            <a href="inquiry.html">Products & Services</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contacts & Links</a>
+            <a href="faqs.html">FAQs</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <div class="about-us-container">
+            <div class="about-content">
+                <h2>Company Profile</h2>
+                <img src="src/logosnw.jpg" alt="Stitches N Wear Logo" class="profile-logo"> 
+                <p>Stitches & Wear Industries is a garment manufacturer, wholesaler, and retailer specializing in t-shirts, factory uniforms, office wear, school uniforms, and sports uniforms. They also offer services for corporate giveaways, including embroidered towels, bags, and mugs.</p>
+                <p>The company was established in 1997 with the main objective of providing high-quality service and competitive prices to all institutions and end-users. They have over two decades of experience, having been in business for 23 years at the time the profile was written.</p>
+            </div>
+            
+            <div class="vision-mission">
+                <div class="vision">
+                    <h3>Vision</h3>
+                    <p>Stitches and Wear Industries aims to be the preferred company for corporate branding, uniforms, and promotional giveaways. The company strives to become popular with its unique and high-quality products in the industry.</p>
+                </div>
+                <div class="mission">
+                    <h3>Mission</h3>
+                    <p>The mission of Stitches and Wear Industries is to serve various institutions and end-users with the highest standards of quality, service, and delivery. The company is committed to providing innovative products and developing the skills of its people to produce better services for its clients.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="awards-section">
+            <h2>Awards Received</h2>
+            <p><strong>Year 2005</strong></p>
+            <ul>
+                <li>No. 1 T-shirt Manufacturer (Metro Cebu) by National Shoppers' Choice Awards</li>
+            </ul>
+            <p><strong>Year 2006</strong></p>
+            <ul>
+                <li>Best T-shirt Manufacturer (Metro Cebu) by National Product Quality Excellence Awards</li>
+                <li>Most Outstanding T-shirt Manufacturer by Philippine Marketing Excellence Awards</li>
+                <li>No. 1 T-shirt Manufacturer (Metro Cebu) by National Shoppers' Choice Awards</li>
+            </ul>
+            <p><strong>Year 2007</strong></p>
+            <ul>
+                <li>Most Outstanding T-shirt Manufacturer by Philippine Marketing Excellence Award</li>
+                <li>No. 1 T-shirt Manufacturer (Metro Cebu Awards) by National Shoppers Choice and the Asia-Pacific Market Research Council</li>
+            </ul>
+            <p><strong>Year 2008</strong></p>
+            <ul>
+                <li>No. 1 Personalized Shirt Manufacturer (Hall of Fame) by National Choice</li>
+                <li>Best Shirt Manufacturer by National Product Quality Excellence Awards</li>
+            </ul>
+            <p><strong>Year 2009</strong></p>
+            <ul>
+                <li>Most Outstanding Personalized Shirt Manufacturer by Phil. Marketing Excellence Awards</li>
+                <li>Best Personalized Shirt Manufacturer by National Product Quality Excellence Awards</li>
+            </ul>
+            <p><strong>Year 2010</strong></p>
+            <ul>
+                <li>Most Trusted Name Personalized Shirts and Manufacturer of Cebu</li>
+            </ul>
+            <p><strong>Year 2011</strong></p>
+            <ul>
+                <li>Hall of Fame Award</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        // Function to toggle sidebar visibility
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const openButton = document.querySelector('.toggle-btn');
+            const closeButton = document.querySelector('.close-btn');
+            const sidebarLogo = document.querySelector('.sidebar-logo');
+            const sidebarTitle = document.querySelector('.sidebar-title');
+            const sidebarNav = document.querySelector('.sidebar-nav');
+
+            sidebar.classList.toggle('open'); // Toggle sidebar visibility
+
+            if (sidebar.classList.contains('open')) {
+                openButton.style.display = 'none'; // Hide the open button
+                closeButton.style.display = 'block'; // Show the close button
+                sidebarLogo.style.visibility = 'visible'; // Make logo visible
+                sidebarTitle.style.visibility = 'visible'; // Make title visible
+                sidebarNav.style.visibility = 'visible'; // Make navigation links visible
+            } else {
+                openButton.style.display = 'block'; // Show the open button
+                closeButton.style.display = 'none'; // Hide the close button
+                sidebarLogo.style.visibility = 'hidden'; // Hide logo
+                sidebarTitle.style.visibility = 'hidden'; // Hide title
+                sidebarNav.style.visibility = 'hidden'; // Hide navigation links
+            }
+        }
+
+        // Function to close the sidebar
+        function closeSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const openButton = document.querySelector('.toggle-btn');
+            const closeButton = document.querySelector('.close-btn');
+            const sidebarLogo = document.querySelector('.sidebar-logo');
+            const sidebarTitle = document.querySelector('.sidebar-title');
+            const sidebarNav = document.querySelector('.sidebar-nav');
+
+            sidebar.classList.remove('open'); // Close sidebar
+            openButton.style.display = 'block'; // Show the open button
+            closeButton.style.display = 'none'; // Hide the close button
+            sidebarLogo.style.visibility = 'hidden'; // Hide logo
+            sidebarTitle.style.visibility = 'hidden'; // Hide title
+            sidebarNav.style.visibility = 'hidden'; // Hide navigation links
+        }
+    </script>
+
+</body>
+</html>
